@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import {Text, ImageBackground, StyleSheet } from 'react-native';
+import {Text, ImageBackground, StyleSheet, View } from 'react-native';
 import Forecast from './Forecast';
+import { color } from 'react-native-reanimated';
 export default function Weather(props) {
 const [forecastInfo, setForecastInfo]= useState ({
     main:'-',
@@ -25,15 +26,28 @@ useEffect(() => {
     }
     }, [props.zipCode])
     return (
-        <ImageBackground source={require('../chu.jpeg')}style={styles.backdrop}>
-            <Text>Zip Code</Text>
-            <Text>{props.zipCode}</Text>
-            <Forecast {...forecastInfo}/>
+        <ImageBackground source={require('../bg2.jpg')}style={styles.backdrop}>
+            
+            <View >
+                <Text>Zip Code</Text>
+                <Text>{props.zipCode}</Text>
+                <Forecast {...forecastInfo}/>  
+             </View>   
+              
+    
         </ImageBackground>
     
     )
    }
-
+   const style = StyleSheet.create({
+    Item:{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems:'center'
+        
+    },
+})
    const styles = StyleSheet.create({
     backdrop: {
     alignItems: 'center',

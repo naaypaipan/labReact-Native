@@ -6,10 +6,12 @@ export default function Forecast(props) {
 
         <View  >
             <Text>{props.main}</Text>
-            <Text>{props.description}</Text>
-                <View>
-                    <Text>{props.temp}</Text>
-                    <Text>°C</Text>
+            <View  >
+            <Text >{props.description}</Text>
+            </View>
+                <View >
+                    <Text>{props.temp}°C</Text>
+                    <Text></Text>
                 </View>
         </View>
     );
@@ -17,12 +19,16 @@ export default function Forecast(props) {
 
    const style = StyleSheet.create({
     zipItem:{
-        flex:1,
+        flex:2,
+        
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-evenly'
+        
     },
     zipPlace:{
-        flex:1,
+        flex:2,
+        flexDirection: 'column',
+        justifyContent: 'space-evenly'
     },
     zipCode:{
         flex:1,
